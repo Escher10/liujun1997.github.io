@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>物联网 | Escher</title>
+  <meta name="description" content="一. 接入流程![image-20201222171458788](&#x2F;Users&#x2F;mac&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20201222171458788.png) 二.系统开发说明1.1 名词解析 产品: 对某一型设备的分类,通常是已经存在的某一个设备型号. 设备：具体的某一个设备. 网络组件: 用于管理各种网络服务(M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物联网">
+<meta property="og:url" content="http://liujun1997.github.io/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/index.html">
+<meta property="og:site_name" content="Escher">
+<meta property="og:description" content="一. 接入流程![image-20201222171458788](&#x2F;Users&#x2F;mac&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20201222171458788.png) 二.系统开发说明1.1 名词解析 产品: 对某一型设备的分类,通常是已经存在的某一个设备型号. 设备：具体的某一个设备. 网络组件: 用于管理各种网络服务(M">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-07T06:44:17.000Z">
+<meta property="article:modified_time" content="2021-08-07T06:44:45.509Z">
+<meta property="article:author" content="Escher">
+<meta property="article:tag" content="IOT">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://liujun1997.github.io/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Escher" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/liujun1997" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar1.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Escher</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java,Python，Coder</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> ZhuHai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/liujun1997" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/流隽jk" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>本人是一个JAVA开发工程师，这里是我的技术分享，生活随笔的空间，欢迎光临呀，希望可以在技术上多多交流！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/IOT/" style="font-size: 13px;">IOT</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 13px;">大数据</a> <a href="/tags/%E5%B0%8F%E8%AE%B0/" style="font-size: 13px;">小记</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/" class="title">物联网</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-07T06:44:17.000Z" itemprop="datePublished">2021-08-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/06/cdh%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="title">cdh安装部署</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-06T15:27:54.000Z" itemprop="datePublished">2021-08-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/06/myFirstBlog/" class="title">myFirstBlog</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-06T14:05:59.000Z" itemprop="datePublished">2021-08-06</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E6%8E%A5%E5%85%A5%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">一. 接入流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E8%AF%B4%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text">二.系统开发说明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-%E5%90%8D%E8%AF%8D%E8%A7%A3%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 名词解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%AE%BE%E5%A4%87%E6%B6%88%E6%81%AF%E5%AE%9A%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">1.3 平台统一设备消息定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-%E6%B6%88%E6%81%AF%E7%BB%84%E6%88%90"><span class="toc-number">2.3.</span> <span class="toc-text">1.2 消息组成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-%E5%B1%9E%E6%80%A7%E7%9B%B8%E5%85%B3%E6%B6%88%E6%81%AF"><span class="toc-number">2.4.</span> <span class="toc-text">1.3 属性相关消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E6%B6%88%E6%81%AF"><span class="toc-number">2.5.</span> <span class="toc-text">1.4 功能相关消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-5-%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%B6%88%E6%81%AF"><span class="toc-number">2.6.</span> <span class="toc-text">1.5 事件相关消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-6-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E6%B6%88%E6%81%AF"><span class="toc-number">2.7.</span> <span class="toc-text">1.6 其他相关消息</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-%E8%AE%BE%E5%A4%87%E6%8E%A5%E5%85%A5"><span class="toc-number">3.</span> <span class="toc-text">二. 设备接入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-%E4%BA%A7%E5%93%81%E7%89%A9%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 产品物模型定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E5%8D%8F%E8%AE%AE%E5%8C%85%E5%BC%80%E5%8F%91"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 协议包开发</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-%E5%88%9B%E5%BB%BA%E5%AF%B9%E5%BA%94%E7%9A%84%E7%BD%91%E5%85%B3%E6%88%96%E8%80%85%E7%BD%91%E7%BB%9C%E7%BB%84%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 创建对应的网关或者网络组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-4-%E5%88%9B%E5%BB%BA%E8%AE%BE%E5%A4%87%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.4.</span> <span class="toc-text">2.4 创建设备实例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-5-%E8%AE%BE%E5%A4%87%E8%B0%83%E8%AF%95"><span class="toc-number">3.5.</span> <span class="toc-text">2.5 设备调试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E6%8E%A5%E5%85%A5%E5%8D%8F%E8%AE%AE%E5%BC%80%E5%8F%91%E8%AF%B4%E6%98%8E"><span class="toc-number">4.</span> <span class="toc-text">三. 接入协议开发说明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 开发步骤</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-物联网" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      物联网
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/" class="article-date">
+	  <time datetime="2021-08-07T06:44:17.000Z" itemprop="datePublished">2021-08-07</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/IOT/" rel="tag">IOT</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+		<span id="busuanzi_value_page_pv">0</span>
+	    <!-- <span id="busuanzi_container_page_pv">
+			
+		</span> -->
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h4 id="一-接入流程"><a href="#一-接入流程" class="headerlink" title="一. 接入流程"></a>一. 接入流程</h4><p>![image-20201222171458788](/Users/mac/Library/Application Support/typora-user-images/image-20201222171458788.png)</p>
+<h4 id="二-系统开发说明"><a href="#二-系统开发说明" class="headerlink" title="二.系统开发说明"></a>二.系统开发说明</h4><h5 id="1-1-名词解析"><a href="#1-1-名词解析" class="headerlink" title="1.1 名词解析"></a>1.1 名词解析</h5><ul>
+<li>产品: 对某一型设备的分类,通常是已经存在的某一个设备型号.</li>
+<li>设备：具体的某一个设备.</li>
+<li>网络组件: 用于管理各种网络服务(MQTT,TCP等),动态配置,启停. 只负责接收,发送报文,不负责任何处理逻辑。</li>
+<li>协议:  用于自定义消息解析规则,用于认证、将设备发送给平台报文解析为平台统一的报文，以及处理平台下发给设备的指令。</li>
+<li>设备网关: 负责平台侧统一的设备接入,使用网络组件处理对应的请求以及报文,使用配置的协议解析为平台统一的设备消息。</li>
+</ul>
+<h5 id="1-3-平台统一设备消息定义"><a href="#1-3-平台统一设备消息定义" class="headerlink" title="1.3 平台统一设备消息定义"></a>1.3 平台统一设备消息定义</h5><ul>
+<li><p>平台使用自定义的协议包将设备上报的报文解析为平台统一的消息,来进行统一管理。</p>
+</li>
+<li><p>平台统一消息基本于物模型中的定义相同,主要由<code>属性(property)</code>,<code>功能(function)</code>,<code>事件(event)</code>组成.</p>
+</li>
+</ul>
+<h5 id="1-2-消息组成"><a href="#1-2-消息组成" class="headerlink" title="1.2 消息组成"></a>1.2 消息组成</h5><ul>
+<li>消息主要由<code>deviceId</code>,<code>messageId</code>,<code>headers</code>,<code>timestamp</code>组成.</li>
+</ul>
+<h5 id="1-3-属性相关消息"><a href="#1-3-属性相关消息" class="headerlink" title="1.3 属性相关消息"></a>1.3 属性相关消息</h5><ol>
+<li><p><code>获取设备属性(ReadPropertyMessage)</code>对应设备回复的消息<code>ReadPropertyMessageReply</code>.</p>
+</li>
+<li><p><code>设备上报属性(ReportPropertyMessage)</code> 由设备上报.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">ReadPropertyMessage&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String deviceId; </span><br><span class="line">    String messageId;</span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">    List&lt;String&gt; properties;<span class="comment">//可读取多个属性</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReadPropertyMessageReply&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String deviceId;</span><br><span class="line">    String messageId;</span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">    <span class="keyword">boolean</span> success;</span><br><span class="line">    Map&lt;String,Object&gt; properties;<span class="comment">//属性键值对</span></span><br><span class="line">&#125;</span><br><span class="line">ReportPropertyMessage&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String deviceId;</span><br><span class="line">    String messageId;</span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">    Map&lt;String,Object&gt; properties;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="1-4-功能相关消息"><a href="#1-4-功能相关消息" class="headerlink" title="1.4 功能相关消息"></a>1.4 功能相关消息</h5><ol>
+<li><p>调用设备功能到消息(<code>FunctionInvokeMessage</code>)由平台发往设备,对应到返回消息<code>FunctionInvokeMessageReply</code></p>
+</li>
+<li><p>事件消息<code>EventMessage</code>由设备端发往平台.</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">FunctionInvokeMessage&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String functionId;<span class="comment">//功能标识,在元数据中定义.</span></span><br><span class="line">    String deviceId;</span><br><span class="line">    String messageId;</span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">    List&lt;FunctionParameter&gt; inputs;<span class="comment">//输入参数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">FunctionParameter&#123;</span><br><span class="line">    String name;</span><br><span class="line">    Object value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">FunctionInvokeMessageReply&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String deviceId;</span><br><span class="line">    String messageId;</span><br><span class="line">    <span class="keyword">long</span> timestamp;</span><br><span class="line">    <span class="keyword">boolean</span> success;</span><br><span class="line">    Object output; <span class="comment">//输出值,需要与元数据定义中的类型一致</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="1-5-事件相关消息"><a href="#1-5-事件相关消息" class="headerlink" title="1.5 事件相关消息"></a>1.5 事件相关消息</h5><ol>
+<li><p>事件消息<code>EventMessage</code>由设备端发往平台.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">EventMessage&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String event; <span class="comment">//事件标识,在元数据中定义</span></span><br><span class="line">    Object data;  <span class="comment">//与元数据中定义的类型一致,如果是对象类型,请转为java.util.HashMap,禁止使用自定义类型.</span></span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="1-6-其他相关消息"><a href="#1-6-其他相关消息" class="headerlink" title="1.6 其他相关消息"></a>1.6 其他相关消息</h5><ol>
+<li><p><code>DeviceOnlineMessage</code> 设备上线消息,通常用于网关代理的子设备的上线操作.</p>
+</li>
+<li><p><code>DeviceOfflineMessage</code> 设备上线消息,通常用于网关代理的子设备的下线操作.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">EventMessage&#123;</span><br><span class="line">    Map&lt;String,Object&gt; headers;</span><br><span class="line">    String event; <span class="comment">//事件标识,在元数据中定义</span></span><br><span class="line">    Object data;  <span class="comment">//与元数据中定义的类型一致,如果是对象类型,请转为java.util.HashMap,禁止使用自定义类型.</span></span><br><span class="line">    <span class="keyword">long</span> timestamp; <span class="comment">//时间戳(毫秒)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="二-设备接入"><a href="#二-设备接入" class="headerlink" title="二. 设备接入"></a>二. 设备接入</h4><h5 id="2-1-产品物模型定义"><a href="#2-1-产品物模型定义" class="headerlink" title="2.1 产品物模型定义"></a>2.1 产品物模型定义</h5><ul>
+<li><p><strong>属性</strong>用于定义一些指标数据,如:<code>电压</code>,<code>温度</code>等. 属性都应该是简单的数据类型,</p>
+</li>
+<li><p><strong>功能</strong>用于定义设备具有的一些可执行动作,如: <code>消音</code>,<code>关灯</code>,<code>云台控制</code>.根据情况设计好输入参数和输出参数.</p>
+</li>
+<li><p><strong>事件</strong>用于定义设备在特定条件时,发生的动作,如:<code>火警</code>,<code>检测到人脸</code>,通常为结构体类型,用于保存比较复杂的数据.</p>
+</li>
+<li><p><strong>标签</strong>对于设备固有不变的信息,建议使用设备标签进行管理,如设备地理位置等.</p>
+<p>![image-20201222173831786](/Users/mac/Library/Application Support/typora-user-images/image-20201222173831786.png)</p>
+</li>
+</ul>
+<h5 id="2-2-协议包开发"><a href="#2-2-协议包开发" class="headerlink" title="2.2 协议包开发"></a>2.2 协议包开发</h5><ul>
+<li><p>协议是设备与平台通信的一种标准，某个设备想与平台进行通信就必须按照某种协议标准进行规定上报的数据格式，支持jar包形式</p>
+</li>
+<li><p>平台封装了网络通信,但是具体的数据由消息协议进行解析.<code>协议(ProtocolSupport)</code>主要由<code>认证器(Authenticator)</code>, <code>消息编解码器(DeviceMessageCodec)</code>,<code>消息发送拦截器(DeviceMessageSenderInterceptor)</code>以及<code>配置元数据(ConfigMetadata)</code>组成</p>
+</li>
+</ul>
+<ol>
+<li> 认证器(Authenticator)是用于在收到设备请求(例如MQTT)时,对客户端进行认证时使用,不同的网络协议(Transport)使用不同的认证器.</li>
+</ol>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Authenticator</span> </span>&#123;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对指定对设备进行认证</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> request 认证请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> device  设备</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 认证结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">Mono&lt;AuthenticationResponse&gt; <span class="title">authenticate</span><span class="params">(<span class="meta">@Nonnull</span> AuthenticationRequest request,</span></span></span><br><span class="line"><span class="params"><span class="function">                                              <span class="meta">@Nonnull</span> DeviceOperator device)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  在MQTT服务网关中指定了认证协议时,将调用此方法进行认证。</span></span><br><span class="line"><span class="comment">     *  注意: 认证通过后,需要设置设备ID.&#123;<span class="doctag">@link</span> AuthenticationResponse#success(String)&#125;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> request  认证请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry 设备注册中心</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 认证结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Mono&lt;AuthenticationResponse&gt; <span class="title">authenticate</span><span class="params">(<span class="meta">@Nonnull</span> AuthenticationRequest request,</span></span></span><br><span class="line"><span class="params"><span class="function">                                                      <span class="meta">@Nonnull</span> DeviceRegistry registry)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Mono.just(AuthenticationResponse.success());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>用于将平台<code>统一的消息(Message)</code>与<code>设备端能处理的消息(EncodedMessage)</code>进行相互转换. 设备网关从<code>网络组件</code>中接收到报文后,会调用对应协议包的消息编解码器进行处理. 不同网络协议需要转换为不同的<code>EncodedMessage</code>类型.比如,MQTT需要转换为<code>MqttMessage</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DeviceMessageCodec</span></span>&#123;</span><br><span class="line">  <span class="comment">//此编解码器支持的网络协议,如: DefaultTransport.MQTT</span></span><br><span class="line">  <span class="function">Transport <span class="title">getSupportTransport</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="comment">//将平台发往设备的消息编码为设备端对消息</span></span><br><span class="line">  Publisher&lt;? extends EncodedMessage&gt; encode(MessageEncodeContext context);</span><br><span class="line">  <span class="comment">//将设备发往平台的消息解码为平台统一的消息</span></span><br><span class="line">  Publisher&lt;? extends Message&gt; decode(MessageDecodeContext context);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>EncodedMessage从网络组件中接收到的消息,不同的网络组件消息类型不同</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EncodedMessage</span></span>&#123;</span><br><span class="line">    <span class="comment">//获取原始报文</span></span><br><span class="line">    <span class="function">ByteBuf <span class="title">getPayload</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//报文转为字符串</span></span><br><span class="line">    <span class="function">String <span class="title">payloadAsString</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//报文转为JSON对象</span></span><br><span class="line">    <span class="function">JSONObject <span class="title">payloadAsJson</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//报文转为JSON数组</span></span><br><span class="line">    <span class="function">JSONArray <span class="title">payloadAsJsonArray</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// 报文转为字节数组</span></span><br><span class="line">    <span class="keyword">byte</span>[] payloadAsBytes()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//mqtt消息</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MqttMessage</span> <span class="keyword">extends</span> <span class="title">EncodedMessage</span></span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">getTopic</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getQos</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>ConfigMetadata 配置元数据用于告诉平台,在使用此协议的时候,需要添加一些自定义配置到设备配置，(<code>DeviceOperator.setConfig</code>)中. 在其他地方可以通过<code>DeviceOperator.getConfig</code>获取这些配置.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CompositeProtocolSupport support = <span class="keyword">new</span> CompositeProtocolSupport();</span><br><span class="line">support.setId(<span class="string">&quot;demo-v1&quot;</span>);</span><br><span class="line">support.setName(<span class="string">&quot;演示协议v1&quot;</span>);</span><br><span class="line">support.setDescription(<span class="string">&quot;演示协议&quot;</span>);</span><br><span class="line">support.setMetadataCodec(<span class="keyword">new</span> ChiefLinksDeviceMetadataCodec()); <span class="comment">//固定为JetLinksDeviceMetadataCodec,请勿修改.</span></span><br><span class="line"></span><br><span class="line">DefaultConfigMetadata mqttConfig = <span class="keyword">new</span> DefaultConfigMetadata(</span><br><span class="line">            <span class="string">&quot;MQTT认证配置&quot;</span></span><br><span class="line">            , <span class="string">&quot;&quot;</span>)</span><br><span class="line">            .add(<span class="string">&quot;username&quot;</span>, <span class="string">&quot;username&quot;</span>, <span class="string">&quot;MQTT用户名&quot;</span>, <span class="keyword">new</span> StringType())</span><br><span class="line">            .add(<span class="string">&quot;password&quot;</span>, <span class="string">&quot;password&quot;</span>, <span class="string">&quot;MQTT密码&quot;</span>, <span class="keyword">new</span> PasswordType())</span><br><span class="line">            .add(<span class="string">&quot;productKey&quot;</span>, <span class="string">&quot;productKey&quot;</span>, <span class="string">&quot;产品密钥&quot;</span>, <span class="keyword">new</span> PasswordType(),DeviceConfigScope.product) <span class="comment">//只有产品需要配置</span></span><br><span class="line">            ;</span><br><span class="line"><span class="comment">//设置MQTT所需要到配置</span></span><br><span class="line"> support.addConfigMetadata(DefaultTransport.MQTT, mqttConfig);</span><br></pre></td></tr></table></figure></li>
+<li><p>DeviceMessageSenderInterceptor 使用拦截器可以拦截消息发送和返回的动作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DeviceMessageSenderInterceptor&#123;</span><br><span class="line">     <span class="comment">//发送前</span></span><br><span class="line">      <span class="function">Mono&lt;DeviceMessage&gt; <span class="title">preSend</span><span class="params">(DeviceOperator device, DeviceMessage message)</span></span>;</span><br><span class="line"></span><br><span class="line">     <span class="comment">//发送后</span></span><br><span class="line">      &lt;R extends DeviceMessage&gt; <span class="function">Flux&lt;R&gt; <span class="title">afterSent</span><span class="params">(DeviceOperator device, DeviceMessage message, Flux&lt;R&gt; reply)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="2-3-创建对应的网关或者网络组件"><a href="#2-3-创建对应的网关或者网络组件" class="headerlink" title="2.3 创建对应的网关或者网络组件"></a>2.3 创建对应的网关或者网络组件</h5><ol>
+<li><p>选择 <code>网络组件</code>–&gt;<code>组件管理</code>–&gt; 点击<code>新增组件</code>按钮，新建对应的网络组件，在创建完成的模块上点击<code>启动</code>按钮</p>
+<p>![image-20201222173951304](/Users/mac/Library/Application Support/typora-user-images/image-20201222173951304.png)</p>
+</li>
+<li><p>选择 <code>网络组件</code>–&gt;<code>设备网关</code>–&gt; 点击<code>新建</code>按钮。在操作列点击<code>启动</code>按钮启动网关。</p>
+<p>![image-20201222174023253](/Users/mac/Library/Application Support/typora-user-images/image-20201222174023253.png)</p>
+</li>
+</ol>
+<h5 id="2-4-创建设备实例"><a href="#2-4-创建设备实例" class="headerlink" title="2.4 创建设备实例"></a>2.4 创建设备实例</h5><ul>
+<li><p>选择 <code>设备管理</code>–&gt;<code>设备</code>–&gt; 点击<code>添加设备</code>按钮，填写对应的信息添加</p>
+<p>![image-20201222173901028](/Users/mac/Library/Application Support/typora-user-images/image-20201222173901028.png)</p>
+</li>
+</ul>
+<h5 id="2-5-设备调试"><a href="#2-5-设备调试" class="headerlink" title="2.5 设备调试"></a>2.5 设备调试</h5><ul>
+<li>使用mqtfx工具模拟设备调试</li>
+</ul>
+<h4 id="三-接入协议开发说明"><a href="#三-接入协议开发说明" class="headerlink" title="三. 接入协议开发说明"></a>三. 接入协议开发说明</h4><ul>
+<li>平台支持mqtt协议，http协议，tcp协议，推荐使用mqtt协议，broker模式接入，平台提供一个此对接模式样例。</li>
+</ul>
+<h5 id="3-1-开发步骤"><a href="#3-1-开发步骤" class="headerlink" title="3.1 开发步骤"></a>3.1 开发步骤</h5><ol>
+<li><p>新建org.chieflinks.demo.protocol，创建协议编码解码类：DemoDeviceMessageCodec</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoDeviceMessageCodec</span> <span class="keyword">implements</span> <span class="title">DeviceMessageCodec</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Transport <span class="title">getSupportTransport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DefaultTransport.Mqtt;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Mono&lt;? extends Message&gt; decode(MessageDecodeContext context) &#123;</span><br><span class="line">        <span class="keyword">return</span> Mono.empty();</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Publisher&lt;? extends EncodedMessage&gt; encode(MessageEncodeContext context) &#123;</span><br><span class="line">        retrun Mono.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>创建协议入口类： DemoProtocolSupportProvider</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoProtocolSupportProvider</span> <span class="keyword">implements</span> <span class="title">ProtocolSupportProvider</span> </span>&#123;</span><br><span class="line">      </span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="keyword">public</span> Mono&lt;? extends ProtocolSupport&gt; create(ServiceContext context) &#123;</span><br><span class="line">          CompositeProtocolSupport support = <span class="keyword">new</span> CompositeProtocolSupport();</span><br><span class="line">          support.setId(<span class="string">&quot;xx&quot;</span>);</span><br><span class="line">          support.setName(<span class="string">&quot;xxx&quot;</span>);</span><br><span class="line">          support.setDescription(<span class="string">&quot;xxx&quot;</span>);</span><br><span class="line">          support.setMetadataCodec(<span class="keyword">new</span> ChiefLinksDeviceMetadataCodec());</span><br><span class="line">          DemoDeviceMessageCodec codec = <span class="keyword">new</span> DemoDeviceMessageCodec();</span><br><span class="line">          support.addMessageCodecSupport(DefaultTransport.Mqtt, () -&gt; Mono.just(codec));</span><br><span class="line">          <span class="keyword">return</span> Mono.just(support);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>消息上报解码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Mono&lt;? extends Message&gt; decode(MessageDecodeContext context) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Mono.fromSupplier(() -&gt; &#123;</span><br><span class="line">            MqttMessage mqttMessage = (MqttMessage) context.getMessage();</span><br><span class="line">            String topic = mqttMessage.getTopic();</span><br><span class="line">            JSONObject payload = 						  JSON.parseObject(mqttMessage.getPayload().toString(StandardCharsets.UTF_8));</span><br><span class="line">            String deviceId = context.getDevice() != <span class="keyword">null</span> ? context.getDevice().getDeviceId() : <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">return</span> doDecode(deviceId, topic, payload);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>平台发送消息给设备(编码)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Mono&lt;EncodedMessage&gt; <span class="title">encode</span><span class="params">(MessageEncodeContext context)</span> </span>&#123;</span><br><span class="line">      Message message = context.getMessage();</span><br><span class="line">      <span class="keyword">return</span> Mono.defer(() -&gt; &#123;</span><br><span class="line">          <span class="keyword">if</span> (message <span class="keyword">instanceof</span> DeviceMessage) &#123;</span><br><span class="line">              <span class="keyword">if</span> (message <span class="keyword">instanceof</span> DisconnectDeviceMessage) &#123;</span><br><span class="line">                  <span class="keyword">return</span> ((ToDeviceMessageContext) context)</span><br><span class="line">                          .disconnect()</span><br><span class="line">                          .then(Mono.empty());</span><br><span class="line">              &#125;</span><br><span class="line">   </span><br><span class="line">              TopicMessage msg = doEncode((DeviceMessage) message);</span><br><span class="line">              <span class="keyword">if</span> (<span class="keyword">null</span> == msg) &#123;</span><br><span class="line">                  <span class="keyword">return</span> Mono.empty();</span><br><span class="line">              &#125;</span><br><span class="line">   </span><br><span class="line">              <span class="keyword">return</span> Mono.just(SimpleMqttMessage.builder()</span><br><span class="line">                              .topic(msg.getTopic())</span><br><span class="line">                              .payload(Unpooled.wrappedBuffer(JSON.toJSONBytes(msg.getMessage())))</span><br><span class="line">                              .build());</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> Mono.empty();</span><br><span class="line">   </span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>打成jar包上传到平台</p>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://liujun1997.github.io/2021/08/07/%E7%89%A9%E8%81%94%E7%BD%91/" title="物联网" target="_blank" rel="external">http://liujun1997.github.io/2021/08/07/物联网/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/liujun1997" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar1.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/liujun1997" target="_blank"><span class="text-dark">Escher</span><small class="ml-1x">Java,Python，Coder</small></a></h3>
+        <div>二线城市苦逼搬砖码农</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/08/06/cdh%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" title="cdh安装部署"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/liujun1997" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/流隽jk" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+        <div class="copyright">
+            
+                &copy; 2021
+                    Escher
+                        
+
+                            <div class="publishby">
+                                <span>点击<span id="busuanzi_value_site_pv" style="font-family:Courier"></span>次,</span>
+                                <span>访客<span id="busuanzi_value_site_uv" style="font-family:Courier"></span>人</span>
+                                </br>
+                                <span id="sitetime"></span>
+                            </div>
+        </div>
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+           year - 作为date对象的年份，为4位年份值
+           month - 0-11之间的整数，做为date对象的月份
+           day - 1-31之间的整数，做为date对象的天数
+           hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+           minutes - 0-59之间的整数，做为date对象的分钟数
+           seconds - 0-59之间的整数，做为date对象的秒数
+           microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+        var t1 = Date.UTC(2021, 08, 06, 21, 20, 52); //t1为建站时间
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        var y = diffYears.toString()
+        var d = diffDays.toString().padStart(3, '0')
+        var h = diffHours.toString().padStart(2, '0')
+        var m = diffMinutes.toString().padStart(2, '0')
+        var s = diffSeconds.toString().padStart(2, '0')
+        document.getElementById("sitetime").innerHTML = "已运行" + y + " 年 " + d + "天" + h + "小时" + m + "分钟" + s + "秒";
+    }
+    siteTime();
+</script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  var requiredFields = 'mail';
+  requiredFields = requiredFields.split(',');
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: true,
+    appId: 'vJnnArHG3ubHciKWAy9BJP9e-MdYXbMMI',
+    appKey: 'q8YnuMuBOJHdFrXYNVBUCFLC',
+    placeholder: '留下邮箱才可以收到新消息提醒哦',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false,
+    requiredFields: requiredFields,
+    enableQQ: 'true',
+    recordIP: 'true'
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+
+<div id="go-top"></div>
+<div id="go-bottom"></div>
+<style type="text/css">
+#go-top {
+ width:40px;height:40px;
+ background-color:#DDA0DD;
+ position:relative;
+ border-radius:20px;
+ position:fixed;right:10px;bottom:60px;
+ cursor:pointer;display:none;
+}
+#go-top:after {
+ content:" ";
+ position:absolute;left:14px;top:14px;
+ border-top:2px solid #fff;border-right:2px solid #fff;
+ width:12px;height:12px;
+ transform:rotate(-45deg);
+}
+#go-top:hover {
+ background-color:#8A2BE2;
+}
+
+#go-bottom {
+ width:40px;height:40px;
+ background-color:#DDA0DD;
+ position:relative;
+ border-radius:20px;
+ position:fixed;right:60px;bottom:60px;
+ cursor:pointer;display:none;
+}
+#go-bottom:after {
+ content:" ";
+ position:absolute;left:14px;top:14px;
+ border-top:2px solid #fff;border-right:2px solid #fff;
+ width:12px;height:12px;
+ transform:rotate(135deg);
+}
+#go-bottom:hover {
+ background-color:#8A2BE2;
+}
+
+</style>
+<script>
+$(function () {
+  var top=$("#go-top");
+  var totalHegiht =  document.body.scrollHeight
+
+  $(window).scroll(function () {
+    ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
+    $("#go-top").click(function () {
+      $('body,html').animate({scrollTop:0});
+      return false();
+    })
+  });
+});
+
+$(function () {
+  var bottom=$("#go-bottom");
+  var totalHegiht =  document.body.scrollHeight
+  $(window).scroll(function () {
+    ($(window).scrollTop() < 300) ? bottom.show(300) : bottom.hide(200);
+    $("#go-bottom").click(function () {
+      $('body,html').animate({scrollTop:totalHegiht});
+      return false();
+    })
+  });
+});
+</script>
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 2px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('一键复制').on('click', function (e) {
+          var code = $(this).parent().find(".code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('一键复制')
+          }, 300)
+        }).append(e)
+      })
+    })
+  </script>
+
+
+</body>
+
+</html>
