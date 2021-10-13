@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Linux自动删除日志 | Escher</title>
-  <meta name="description" content="linux自动删除以前的日志">
+  <title>Centos7-Mysq5.7安装 | Escher</title>
+  <meta name="description" content="环境准备 Centos 7系统, x86架构 1234[root@CentOS7-2 ~]# uname -sLinux[root@CentOS7-2 ~]# uname -mx86_64 centos镜像源中没有mysql镜像源，需要下载mysql镜像源，执行完成后会在&#x2F;etc&#x2F;yum.repos.d&#x2F;目录下生成两个repo文件mysql-community.repo mysql-communi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux自动删除日志">
-<meta property="og:url" content="http://liujun1997.github.io/2021/08/17/Linux%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:title" content="Centos7-Mysq5.7安装">
+<meta property="og:url" content="http://liujun1997.github.io/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="Escher">
-<meta property="og:description" content="linux自动删除以前的日志">
+<meta property="og:description" content="环境准备 Centos 7系统, x86架构 1234[root@CentOS7-2 ~]# uname -sLinux[root@CentOS7-2 ~]# uname -mx86_64 centos镜像源中没有mysql镜像源，需要下载mysql镜像源，执行完成后会在&#x2F;etc&#x2F;yum.repos.d&#x2F;目录下生成两个repo文件mysql-community.repo mysql-communi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-17T03:28:46.000Z">
-<meta property="article:modified_time" content="2021-08-17T06:12:11.667Z">
+<meta property="article:published_time" content="2021-10-13T07:59:26.000Z">
+<meta property="article:modified_time" content="2021-10-13T09:59:48.892Z">
 <meta property="article:author" content="Escher">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Mysql Linux">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://liujun1997.github.io/2021/08/17/Linux%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4%E6%97%A5%E5%BF%97/index.html">
+  <link rel="canonical" href="http://liujun1997.github.io/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Escher" type="application/atom+xml">
   
@@ -330,21 +330,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5"><span class="toc-number">3.</span> <span class="toc-text">实践</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">环境准备</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Linux自动删除日志" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Centos7-Mysql5-7安装" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Linux自动删除日志
+      Centos7-Mysq5.7安装
     </h1>
   
 
@@ -352,20 +352,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/17/Linux%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4%E6%97%A5%E5%BF%97/" class="article-date">
-	  <time datetime="2021-08-17T03:28:46.000Z" itemprop="datePublished">2021-08-17</time>
+	<a href="/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/" class="article-date">
+	  <time datetime="2021-10-13T07:59:26.000Z" itemprop="datePublished">2021-10-13</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>
+	<a class="article-tag-link-link" href="/tags/Mysql-Linux/" rel="tag">Mysql Linux</a>
   </span>
 
 
@@ -379,47 +379,72 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/17/Linux%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4%E6%97%A5%E5%BF%97/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 266(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 838(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul>
-<li>最近定时任务调度平台的日志比较多，经过长期的日积月累，终于磁盘的空间终于爆了，业务系统也瘫痪了，所以需要定时无用的日志。</li>
-</ul>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><ul>
-<li>google后，发现有两种解决方法<ol>
-<li>通过find 命令解决<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find $&#123;dirname&#125; -name &quot;*.log&quot; -mtime $&#123;day&#125; -exec rf -rf &#123;&#125; \; </span><br></pre></td></tr></table></figure></li>
-<li>通过递归遍历文件夹的文件，比较文件的创建时间，进行删除</li>
-</ol>
-</li>
-<li>比较发现还是第一种比较方便</li>
-</ul>
-<h4 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h4><ul>
-<li><p> 命令解析 find 对应目录 -mtime +天数 -name “文件名” -exec rm -rf {} ;</p>
-</li>
-<li><p>实际命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc/nginx/log -mtime +30 -name &#x27;*.log&#x27; -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure></li>
-<li><p>再优化一下</p>
-<ul>
-<li>新建脚本文件 vim autoDeleteLog.sh</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">findDir=&#x27;/etc/nginx/log&#x27;</span><br><span class="line">if [ -d &quot;$&#123;findDir&#125;&quot;]; then</span><br><span class="line"> echo start delete log file 30 day ago...</span><br><span class="line">	find /etc/nginx/log -mtime +30 -name &#x27;*.log&#x27; -exec rm -rf &#123;&#125; \; </span><br><span class="line">	echo delete log file end...</span><br><span class="line">else</span><br><span class="line"> echo $&#123;findDir&#125; not find...</span><br><span class="line">fi </span><br></pre></td></tr></table></figure>
+        <h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><ul>
+<li><p>Centos 7系统, x86架构</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS7-2 ~]# uname -s</span><br><span class="line">Linux</span><br><span class="line">[root@CentOS7-2 ~]# uname -m</span><br><span class="line">x86_64</span><br></pre></td></tr></table></figure></li>
+<li><p>centos镜像源中没有mysql镜像源，需要下载mysql镜像源，执行完成后会在/etc/yum.repos.d/目录下生成两个repo文件mysql-community.repo mysql-community-source.repo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS7-2 ~]# wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm</span><br><span class="line">[root@CentOS7-2 ~]# rpm -ivh mysql57-community-release-el7-9.noarch.rpm</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>安装mysql-5.7</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS7-2 ~]# yum install mysql-server -y</span><br></pre></td></tr></table></figure></li>
+<li><p>启动mysql</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS7-2 ~]# systemctl start mysqld </span><br></pre></td></tr></table></figure></li>
+<li><p>获取临时密码登录mysql</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS7-2 ~]# grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line">2021-10-13T06:59:08.797851Z 1 [Note] A temporary password is generated for root@localhost: wZvCfS)LI0kf # (mysql安装临时密码) 如果没有临时密码， 删除原来安装过的mysql残留的数据 rm -rf /var/lib/mysql</span><br><span class="line">[root@CentOS7-2 ~]# mysql -uroot -p</span><br><span class="line">Enter password:</span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 3</span><br><span class="line">Server version: 5.7.35</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2021, Oracle and/or its affiliates.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">mysql&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>给脚本加上权限 chmod +x autoDeleteLog.sh</li>
+<li><p>如果登录不了，需要修改配置文件跳过密码登录 vim /etc/my.cnf 在mysqld域增加一行<br>skip-grant-tables</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> For advice on how to change settings please see</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html</span></span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">skip-grant-tables</span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># Remove leading # and set to the amount of RAM for the most important data</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> cache <span class="keyword">in</span> MySQL. Start at 70% of total RAM <span class="keyword">for</span> dedicated server, <span class="keyword">else</span> 10%.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> innodb_buffer_pool_size = 128M</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># Remove leading # to turn on a very important data integrity option: logging</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> changes to the binary <span class="built_in">log</span> between backups.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> log_bin</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># Remove leading # to set options mainly useful for reporting servers.</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> The server defaults are faster <span class="keyword">for</span> transactions and fast SELECTs.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Adjust sizes as needed, experiment to find the optimal values.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> join_buffer_size = 128M</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sort_buffer_size = 2M</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> read_rnd_buffer_size = 2M</span></span><br><span class="line">datadir=/var/lib/mysql</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=0</span><br><span class="line"></span><br><span class="line">log-error=/var/log/mysqld.log</span><br><span class="line">pid-file=/var/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>设置为定时任务执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">bin: crontab -e</span></span><br><span class="line">0 0 * * * /home/autoDeleteLog.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>登录之后修改默认密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 方式一</span></span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;@Escher123456&#x27;;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 方式二</span></span><br><span class="line">set password for root@localhost = password(&#x27;@Escher123456123456&#x27;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>修改密码后，可以修改mysql的默认密码校验策略设置简单密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> SHOW VARIABLES LIKE <span class="string">&#x27;validate_password%&#x27;</span>;</span></span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line">| Variable_name                        | Value  |</span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line">| validate_password_check_user_name    | OFF    |</span><br><span class="line">| validate_password_dictionary_file    |        |</span><br><span class="line">| validate_password_length             | 8      |</span><br><span class="line">| validate_password_mixed_case_count   | 1      |</span><br><span class="line">| validate_password_number_count       | 1      |</span><br><span class="line">| validate_password_policy             | MEDIUM |</span><br><span class="line">| validate_password_special_char_count | 1      |</span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line">7 rows in set (0.00 sec)</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash">  <span class="built_in">set</span> global validate_password_policy=LOW;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> <span class="built_in">set</span> global validate_password_length=4;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>密码的策略</p>
+<ol>
+<li><p>validate_password_length  固定密码的总长度；</p>
+</li>
+<li><p>validate_password_dictionary_file 指定密码验证的文件路径；</p>
+</li>
+<li><p>validate_password_mixed_case_count  整个密码中至少要包含大/小写字母的总个数；</p>
+</li>
+<li><p>validate_password_number_count  整个密码中至少要包含阿拉伯数字的个数；</p>
+</li>
+<li><p>validate_password_policy 指定密码的强度验证等级，默认为 MEDIUM；</p>
+<ul>
+<li><p>LOW：只验证长度；</p>
+</li>
+<li><p>MEDIUM：验证长度、数字、大小写、特殊字符；</p>
+</li>
+<li><p>STRONG：验证长度、数字、大小写、特殊字符、字典文件；</p>
+</li>
+</ul>
+</li>
+<li><p>validate_password_special_char_count 整个密码中至少要包含特殊字符的个数；</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>设置远程登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> use mysql;</span></span><br><span class="line">Reading table information for completion of table and column names</span><br><span class="line">You can turn off this feature to get a quicker startup with -A</span><br><span class="line"></span><br><span class="line">Database changed</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> select user,host from user;</span></span><br><span class="line">+---------------+-----------+</span><br><span class="line">| user          | host      |</span><br><span class="line">+---------------+-----------+</span><br><span class="line">| mysql.session | localhost |</span><br><span class="line">| mysql.sys     | localhost |</span><br><span class="line">| root          | localhost |</span><br><span class="line">+---------------+-----------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br><span class="line"><span class="meta">#</span><span class="bash"> ALL PRIVILEGES 赋予所有的权限(select,update,delete,insert)  *.*所有的数据库和表  WITH GRANT OPTION是赋权的作用</span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;root&#x27;</span> WITH GRANT OPTION;</span></span><br><span class="line">Query OK, 0 rows affected, 1 warning (0.00 sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>最后刷新权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -430,7 +455,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://liujun1997.github.io/2021/08/17/Linux%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4%E6%97%A5%E5%BF%97/" title="Linux自动删除日志" target="_blank" rel="external">http://liujun1997.github.io/2021/08/17/Linux自动删除日志/</a>
+      <a href="http://liujun1997.github.io/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/" title="Centos7-Mysq5.7安装" target="_blank" rel="external">http://liujun1997.github.io/2021/10/13/Centos7-Mysql5-7安装/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -476,13 +501,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/08/21/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="树莓派常用操作"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/08/10/Cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%A7%A3%E6%9E%90/" title="Cron表达式解析"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/10/11/Linux%E7%A3%81%E7%9B%98-%E5%88%86%E5%8C%BA-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux磁盘/分区/文件系统"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
