@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Mysql常用函数 | Escher</title>
+  <meta name="description" content="mysql常用函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql常用函数">
+<meta property="og:url" content="http://liujun1997.github.io/2021/12/15/Mysql%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Escher">
+<meta property="og:description" content="mysql常用函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-15T13:19:57.000Z">
+<meta property="article:modified_time" content="2021-12-15T13:21:37.161Z">
+<meta property="article:author" content="Escher">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://liujun1997.github.io/2021/12/15/Mysql%E5%87%BD%E6%95%B0/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Escher" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="./images/log.jpg" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/liujun1997" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar1.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Escher</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java,Python,Coder</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> ZhuHai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/liujun1997" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/流隽jk" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>本人是一个JAVA开发工程师，这里是我的技术分享，生活随笔的空间，欢迎光临呀，希望可以在技术上多多交流！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/IOT-chieflinks/" style="font-size: 13px;">IOT chieflinks</a> <a href="/tags/Java/" style="font-size: 13px;">Java</a> <a href="/tags/Linux/" style="font-size: 13.5px;">Linux</a> <a href="/tags/Linux-Shell/" style="font-size: 14px;">Linux Shell</a> <a href="/tags/Linux-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/" style="font-size: 13px;">Linux 磁盘分区</a> <a href="/tags/Mysql-Linux/" style="font-size: 13px;">Mysql Linux</a> <a href="/tags/mysql/" style="font-size: 13px;">mysql</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 13px;">大数据</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE-%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">树莓派 网络</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/12/15/Mysql%E5%87%BD%E6%95%B0/" class="title">Mysql常用函数</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-12-15T13:19:57.000Z" itemprop="datePublished">2021-12-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/12/15/page/" class="title">page</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-12-15T13:16:27.000Z" itemprop="datePublished">2021-12-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/10/13/Centos7-Mysql5-7%E5%AE%89%E8%A3%85/" class="title">Centos7-Mysql5.7安装</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-13T07:59:26.000Z" itemprop="datePublished">2021-10-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/10/11/Linux%E7%A3%81%E7%9B%98-%E5%88%86%E5%8C%BA-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="title">Linux磁盘/分区/文件系统</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-11T08:59:47.000Z" itemprop="datePublished">2021-10-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/04/shell-4/" class="title">Shell-4</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-04T12:34:53.000Z" itemprop="datePublished">2021-09-04</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">mysql 常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.字符串函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.日期时间函数</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Mysql函数" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql常用函数
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/12/15/Mysql%E5%87%BD%E6%95%B0/" class="article-date">
+	  <time datetime="2021-12-15T13:19:57.000Z" itemprop="datePublished">2021-12-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/mysql/" rel="tag">mysql</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+		<span id="busuanzi_value_page_pv">0</span>
+	    <!-- <span id="busuanzi_container_page_pv">
+			
+		</span> -->
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/12/15/Mysql%E5%87%BD%E6%95%B0/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="mysql-常用函数"><a href="#mysql-常用函数" class="headerlink" title="mysql 常用函数"></a>mysql 常用函数</h2><h4 id="1-字符串函数"><a href="#1-字符串函数" class="headerlink" title="1.字符串函数"></a>1.字符串函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lower</td>
+<td>字符串转为小写</td>
+</tr>
+<tr>
+<td>upper</td>
+<td>字符串转为大写</td>
+</tr>
+<tr>
+<td>concat</td>
+<td>字符串连接</td>
+</tr>
+<tr>
+<td>concat_ws</td>
+<td>将多个字符串按指定字符连接</td>
+</tr>
+<tr>
+<td>substr(str,pos,len)</td>
+<td>将字符串按下标分割，下标从0开始</td>
+</tr>
+<tr>
+<td>length</td>
+<td>返回字符串的存储长度</td>
+</tr>
+<tr>
+<td>char_length</td>
+<td>返回字符串的字符个数</td>
+</tr>
+<tr>
+<td>instr(str,substr)</td>
+<td>返回指定字符串substr 在str字符串第一出现的位置</td>
+</tr>
+<tr>
+<td>lpad(str,legth,padstr)</td>
+<td>在源字符str左(右边)边填充padstr到指定长度length</td>
+</tr>
+<tr>
+<td>TRIM([{BOTH | LEADING | TRAILING} [remstr] FROM] str), TRIM([remstr FROM] str)</td>
+<td>从源字符str中去除两端，左前缀，右后缀的remstr字符</td>
+</tr>
+<tr>
+<td>REPLACE(str, from_str, to_str)</td>
+<td>源字符串str中查找所有的子串form_str（大小写敏感），找到后使用替代字符串to_str替换它</td>
+</tr>
+<tr>
+<td>LTRIM(str)，RTRIM(str)</td>
+<td>去掉字符串的左边或右边的空格(左对齐、右对齐)</td>
+</tr>
+<tr>
+<td>REPEAT(str, count)</td>
+<td>将字符串str重复count次后返回</td>
+</tr>
+<tr>
+<td>REVERSE(str)</td>
+<td>将字符串str反转后返回</td>
+</tr>
+<tr>
+<td>FORMAT(X,D[,locale])</td>
+<td>格式化数字X，D指定小数位数，locale指定国家语言(默认的locale为en_US)</td>
+</tr>
+<tr>
+<td>LEFT(str, len)，RIGHT(str, len)</td>
+<td>返回最左(右)边的len长度的子串</td>
+</tr>
+<tr>
+<td>STRCMP(expr1,expr2)</td>
+<td>如果两个字符串是一样的则返回0；如果第一个小于第二个则返回-1；否则返回1</td>
+</tr>
+<tr>
+<td>|| 管道连接符</td>
+<td>select 列名1 || 列名2 || 列名3  from  表名; 进行上式连接查询之后，会将查询结果集在一列中显示(字符串连接)，列名是‘列名1 || 列名2 || 列名3’；</td>
+</tr>
+</tbody></table>
+<h4 id="2-日期时间函数"><a href="#2-日期时间函数" class="headerlink" title="2.日期时间函数"></a>2.日期时间函数</h4><ol>
+<li><p>now() 返回当前日期时间</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> now();</span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------+</span></span><br><span class="line"><span class="operator">|</span> now()               <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-12</span><span class="number">-01</span> <span class="number">10</span>:<span class="number">56</span>:<span class="number">05</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>curdate() 返回当前日期</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> curdate();</span><br><span class="line"><span class="operator">+</span><span class="comment">------------+</span></span><br><span class="line"><span class="operator">|</span> curdate()  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-12</span><span class="number">-01</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>curtime()</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> curtime();</span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+</span></span><br><span class="line"><span class="operator">|</span> curtime() <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">11</span>:<span class="number">04</span>:<span class="number">07</span>  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>date(date) 提取指定字段的日期</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="type">date</span>(now());</span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="type">date</span>(now()) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-12</span><span class="number">-01</span>  <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>extract(unit from 字段名) 提取日期/时间表达中指定时间单位</p>
+</li>
+</ol>
+<ul>
+<li><p>unit 单位表</p>
+<table>
+<thead>
+<tr>
+<th align="left">Unit 值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">MICROSECOND</td>
+</tr>
+<tr>
+<td align="left">SECOND</td>
+</tr>
+<tr>
+<td align="left">MINUTE</td>
+</tr>
+<tr>
+<td align="left">HOUR</td>
+</tr>
+<tr>
+<td align="left">DAY</td>
+</tr>
+<tr>
+<td align="left">WEEK</td>
+</tr>
+<tr>
+<td align="left">MONTH</td>
+</tr>
+<tr>
+<td align="left">QUARTER</td>
+</tr>
+<tr>
+<td align="left">YEAR</td>
+</tr>
+<tr>
+<td align="left">SECOND_MICROSECOND</td>
+</tr>
+<tr>
+<td align="left">MINUTE_MICROSECOND</td>
+</tr>
+<tr>
+<td align="left">MINUTE_SECOND</td>
+</tr>
+<tr>
+<td align="left">HOUR_MICROSECOND</td>
+</tr>
+<tr>
+<td align="left">HOUR_SECOND</td>
+</tr>
+<tr>
+<td align="left">HOUR_MINUTE</td>
+</tr>
+<tr>
+<td align="left">DAY_MICROSECOND</td>
+</tr>
+<tr>
+<td align="left">DAY_SECOND</td>
+</tr>
+<tr>
+<td align="left">DAY_MINUTE</td>
+</tr>
+<tr>
+<td align="left">DAY_HOUR</td>
+</tr>
+<tr>
+<td align="left">YEAR_MONTH</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="built_in">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> <span class="keyword">year</span></span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> ,<span class="built_in">extract</span>(<span class="keyword">month</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> <span class="keyword">month</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> <span class="built_in">extract</span>(<span class="keyword">day</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> <span class="keyword">day</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> <span class="built_in">extract</span>(<span class="keyword">hour</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> <span class="keyword">hour</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> <span class="built_in">extract</span>(<span class="keyword">minute</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> <span class="keyword">minute</span>,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> <span class="built_in">extract</span>(<span class="keyword">second</span> <span class="keyword">from</span> now()) <span class="keyword">as</span> seconde,</span><br><span class="line">    <span class="operator">-</span><span class="operator">&gt;</span> <span class="built_in">extract</span>(microsecond <span class="keyword">from</span> now()) <span class="keyword">as</span> microsecond;</span><br><span class="line"><span class="operator">+</span><span class="comment">------+-------+------+------+--------+---------+-------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="keyword">year</span> <span class="operator">|</span> <span class="keyword">month</span> <span class="operator">|</span> <span class="keyword">day</span>  <span class="operator">|</span> <span class="keyword">hour</span> <span class="operator">|</span> <span class="keyword">minute</span> <span class="operator">|</span> seconde <span class="operator">|</span> microsecond <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------+-------+------+------+--------+---------+-------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span> <span class="operator">|</span>    <span class="number">12</span> <span class="operator">|</span>    <span class="number">1</span> <span class="operator">|</span>   <span class="number">11</span> <span class="operator">|</span>     <span class="number">13</span> <span class="operator">|</span>      <span class="number">40</span> <span class="operator">|</span>           <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------+-------+------+------+--------+---------+-------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="built_in">extract</span>(<span class="keyword">day</span> <span class="keyword">from</span> <span class="string">&#x27;2021-10-02&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="built_in">extract</span>(<span class="keyword">day</span> <span class="keyword">from</span> <span class="string">&#x27;2021-10-02&#x27;</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span>                              <span class="number">2</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>date_add/sub() 给指定日期/时间表达式加(减)上指定时间间隔</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> date_add(now(),<span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span> date_add(now(),<span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-12</span><span class="number">-02</span> <span class="number">11</span>:<span class="number">21</span>:<span class="number">41</span>            <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment">----------------------------------------------</span></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> date_sub(now(),<span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span> date_sub(now(),<span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-11</span><span class="number">-30</span> <span class="number">11</span>:<span class="number">21</span>:<span class="number">58</span>            <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"> </span><br></pre></td></tr></table></figure></li>
+<li><p>Date_Format(date,format) 将日期按指定的日期/时间格式输出</p>
+<ul>
+<li>mysql时间格式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">格式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">%a</td>
+<td align="left">缩写星期名</td>
+</tr>
+<tr>
+<td align="left">%b</td>
+<td align="left">缩写月名</td>
+</tr>
+<tr>
+<td align="left">%c</td>
+<td align="left">月，数值</td>
+</tr>
+<tr>
+<td align="left">%D</td>
+<td align="left">带有英文前缀的月中的天</td>
+</tr>
+<tr>
+<td align="left">%d</td>
+<td align="left">月的天，数值（00-31）</td>
+</tr>
+<tr>
+<td align="left">%e</td>
+<td align="left">月的天，数值（0-31）</td>
+</tr>
+<tr>
+<td align="left">%f</td>
+<td align="left">微秒</td>
+</tr>
+<tr>
+<td align="left">%H</td>
+<td align="left">小时（00-23）</td>
+</tr>
+<tr>
+<td align="left">%h</td>
+<td align="left">小时（01-12）</td>
+</tr>
+<tr>
+<td align="left">%I</td>
+<td align="left">小时（01-12）</td>
+</tr>
+<tr>
+<td align="left">%i</td>
+<td align="left">分钟，数值（00-59）</td>
+</tr>
+<tr>
+<td align="left">%j</td>
+<td align="left">年的天（001-366）</td>
+</tr>
+<tr>
+<td align="left">%k</td>
+<td align="left">小时（0-23）</td>
+</tr>
+<tr>
+<td align="left">%l</td>
+<td align="left">小时（1-12）</td>
+</tr>
+<tr>
+<td align="left">%M</td>
+<td align="left">月名</td>
+</tr>
+<tr>
+<td align="left">%m</td>
+<td align="left">月，数值（00-12）</td>
+</tr>
+<tr>
+<td align="left">%p</td>
+<td align="left">AM 或 PM</td>
+</tr>
+<tr>
+<td align="left">%r</td>
+<td align="left">时间，12-小时（hh:mm:ss AM 或 PM）</td>
+</tr>
+<tr>
+<td align="left">%S</td>
+<td align="left">秒（00-59）</td>
+</tr>
+<tr>
+<td align="left">%s</td>
+<td align="left">秒（00-59）</td>
+</tr>
+<tr>
+<td align="left">%T</td>
+<td align="left">时间, 24-小时（hh:mm:ss）</td>
+</tr>
+<tr>
+<td align="left">%U</td>
+<td align="left">周（00-53）星期日是一周的第一天</td>
+</tr>
+<tr>
+<td align="left">%u</td>
+<td align="left">周（00-53）星期一是一周的第一天</td>
+</tr>
+<tr>
+<td align="left">%V</td>
+<td align="left">周（01-53）星期日是一周的第一天，与 %X 使用</td>
+</tr>
+<tr>
+<td align="left">%v</td>
+<td align="left">周（01-53）星期一是一周的第一天，与 %x 使用</td>
+</tr>
+<tr>
+<td align="left">%W</td>
+<td align="left">星期名</td>
+</tr>
+<tr>
+<td align="left">%w</td>
+<td align="left">周的天（0=星期日, 6=星期六）</td>
+</tr>
+<tr>
+<td align="left">%X</td>
+<td align="left">年，其中的星期日是周的第一天，4 位，与 %V 使用</td>
+</tr>
+<tr>
+<td align="left">%x</td>
+<td align="left">年，其中的星期一是周的第一天，4 位，与 %v 使用</td>
+</tr>
+<tr>
+<td align="left">%Y</td>
+<td align="left">年，4 位</td>
+</tr>
+<tr>
+<td align="left">%y</td>
+<td align="left">年，2 位</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> date_format(now(),<span class="string">&#x27;%Y%m%d %H%i%S&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> date_format(now(),<span class="string">&#x27;%Y%m%d %H%i%S&#x27;</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">20211201</span> <span class="number">113323</span>                    <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li><p>unix_timestamp(date) 日期/时间表达式转时间戳 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> unix_timestamp(<span class="string">&#x27;2021-10-11 10:12:12&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> unix_timestamp(<span class="string">&#x27;2021-10-11 10:12:12&#x27;</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------------+</span></span><br><span class="line"><span class="operator">|</span>                            <span class="number">1633918332</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>str_to_date(date) 字符串转日期</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> str_to_date(<span class="string">&#x27;2021-10-11 10:12:12&#x27;</span>,<span class="string">&#x27;%Y-%m-%d %H:%i:%S&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> str_to_date(<span class="string">&#x27;2021-10-11 10:12:12&#x27;</span>,<span class="string">&#x27;%Y-%m-%d %H:%i:%S&#x27;</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2021</span><span class="number">-10</span><span class="number">-11</span> <span class="number">10</span>:<span class="number">12</span>:<span class="number">12</span>                                    <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure></li>
+<li><p>from_unitime(timestamp,{format}) 时间戳转字符串/日期 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> from_unixtime(<span class="number">1509257408</span>,<span class="string">&#x27;%Y~%m~%d %H:%i:%S&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">-----------------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> from_unixtime(<span class="number">1509257408</span>,<span class="string">&#x27;%Y~%m~%d %H:%i:%S&#x27;</span>) <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------------------------------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="number">2017</span><span class="operator">~</span><span class="number">10</span><span class="operator">~</span><span class="number">29</span> <span class="number">14</span>:<span class="number">10</span>:<span class="number">08</span>                           <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------------------------------------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://liujun1997.github.io/2021/12/15/Mysql%E5%87%BD%E6%95%B0/" title="Mysql常用函数" target="_blank" rel="external">http://liujun1997.github.io/2021/12/15/Mysql函数/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/liujun1997" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar1.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/liujun1997" target="_blank"><span class="text-dark">Escher</span><small class="ml-1x">Java,Python,Coder</small></a></h3>
+        <div>二线城市苦逼搬砖码农</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/12/15/page/" title="page"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/liujun1997" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/流隽jk" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+        <div class="copyright">
+            
+                &copy; 2021
+                    Escher
+                        
+
+                            <div class="publishby">
+                                <span>点击<span id="busuanzi_value_site_pv" style="font-family:Courier"></span>次,</span>
+                                <span>访客<span id="busuanzi_value_site_uv" style="font-family:Courier"></span>人</span>
+                                </br>
+                                <span id="sitetime"></span>
+                            </div>
+        </div>
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+           year - 作为date对象的年份，为4位年份值
+           month - 0-11之间的整数，做为date对象的月份
+           day - 1-31之间的整数，做为date对象的天数
+           hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+           minutes - 0-59之间的整数，做为date对象的分钟数
+           seconds - 0-59之间的整数，做为date对象的秒数
+           microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+        var t1 = Date.UTC(2021, 08, 06, 21, 20, 52); //t1为建站时间
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        var y = diffYears.toString()
+        var d = diffDays.toString().padStart(3, '0')
+        var h = diffHours.toString().padStart(2, '0')
+        var m = diffMinutes.toString().padStart(2, '0')
+        var s = diffSeconds.toString().padStart(2, '0')
+        document.getElementById("sitetime").innerHTML = "已运行" + y + " 年 " + d + "天" + h + "小时" + m + "分钟" + s + "秒";
+    }
+    siteTime();
+</script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  var requiredFields = 'mail';
+  requiredFields = requiredFields.split(',');
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: true,
+    appId: 'vJnnArHG3ubHciKWAy9BJP9e-MdYXbMMI',
+    appKey: 'q8YnuMuBOJHdFrXYNVBUCFLC',
+    placeholder: '留下邮箱才可以收到新消息提醒哦',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false,
+    requiredFields: requiredFields,
+    enableQQ: 'true',
+    recordIP: 'true'
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+
+<div id="go-top"></div>
+<div id="go-bottom"></div>
+<style type="text/css">
+#go-top {
+ width:40px;height:40px;
+ background-color:#DDA0DD;
+ position:relative;
+ border-radius:20px;
+ position:fixed;right:10px;bottom:60px;
+ cursor:pointer;display:none;
+}
+#go-top:after {
+ content:" ";
+ position:absolute;left:14px;top:14px;
+ border-top:2px solid #fff;border-right:2px solid #fff;
+ width:12px;height:12px;
+ transform:rotate(-45deg);
+}
+#go-top:hover {
+ background-color:#8A2BE2;
+}
+
+#go-bottom {
+ width:40px;height:40px;
+ background-color:#DDA0DD;
+ position:relative;
+ border-radius:20px;
+ position:fixed;right:60px;bottom:60px;
+ cursor:pointer;display:none;
+}
+#go-bottom:after {
+ content:" ";
+ position:absolute;left:14px;top:14px;
+ border-top:2px solid #fff;border-right:2px solid #fff;
+ width:12px;height:12px;
+ transform:rotate(135deg);
+}
+#go-bottom:hover {
+ background-color:#8A2BE2;
+}
+
+</style>
+<script>
+$(function () {
+  var top=$("#go-top");
+  var totalHegiht =  document.body.scrollHeight
+
+  $(window).scroll(function () {
+    ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
+    $("#go-top").click(function () {
+      $('body,html').animate({scrollTop:0});
+      return false();
+    })
+  });
+});
+
+$(function () {
+  var bottom=$("#go-bottom");
+  var totalHegiht =  document.body.scrollHeight
+  $(window).scroll(function () {
+    ($(window).scrollTop() < 300) ? bottom.show(300) : bottom.hide(200);
+    $("#go-bottom").click(function () {
+      $('body,html').animate({scrollTop:totalHegiht});
+      return false();
+    })
+  });
+});
+</script>
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 2px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('一键复制').on('click', function (e) {
+          var code = $(this).parent().find(".code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('一键复制')
+          }, 300)
+        }).append(e)
+      })
+    })
+  </script>
+
+
+</body>
+
+</html>
