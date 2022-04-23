@@ -25,17 +25,17 @@
 <meta property="og:site_name" content="Escher">
 <meta property="og:description" content="1.背景 最近在帮朋友解决一个挂载硬盘的问题，发现自己对磁盘分区文件系统了解比较少，因此写这篇文章记录下。  2.磁盘 在linux中，万物皆文件。硬件这些设备在linux中称为设备文件，磁盘在linux中叫做块设备文件。  2.1 磁盘的分类 当下比较常见的硬盘分为SCSI，STAT，SAS，SSD硬盘，比较古老的有IDE硬盘，由于效率比较低，已经在消费市场少见了。  SCSI硬盘: 采用SCS">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/UDa7G2.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/DDDmWK.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/qdGHPA.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/Mvv0z0.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/v6IcQv.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/UDa7G2.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/DDDmWK.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/qdGHPA.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/Mvv0z0.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/v6IcQv.png">
 <meta property="article:published_time" content="2021-10-11T08:59:47.000Z">
-<meta property="article:modified_time" content="2022-04-21T14:35:25.493Z">
+<meta property="article:modified_time" content="2022-04-23T12:25:27.943Z">
 <meta property="article:author" content="Escher">
 <meta property="article:tag" content="Linux 磁盘分区">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://121.36.60.111:18001/image/Pic/UDa7G2.png">
+<meta name="twitter:image" content="https://file.coderstudy.cn/image/Pic/UDa7G2.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://liujun1997.github.io/2021/10/11/Linux%E7%A3%81%E7%9B%98-%E5%88%86%E5%8C%BA-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.html">
   
@@ -412,21 +412,21 @@
 <li><p>SAS是Serial Attached SCSI 的缩写，比SCSI硬盘更加昂贵。</p>
 </li>
 <li><p>STAT:  Serial ATA接口硬盘，采用串行接口，主要在消费市场使用。</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/UDa7G2.png" alt="UDa7G2"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/UDa7G2.png" alt="UDa7G2"></p>
 </li>
 <li><p>固态硬盘是用固态电子存储芯片阵列而制成的硬盘，由控制单元和存储单元(FLASH芯片、DRAM芯片)组成。其主要特点是没有传统硬盘的机械结构，读写速度非常快</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/DDDmWK.png" alt="DDDmWK"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/DDDmWK.png" alt="DDDmWK"></p>
 </li>
 </ul>
 <h5 id="2-2-硬盘原理"><a href="#2-2-硬盘原理" class="headerlink" title="2.2 硬盘原理"></a>2.2 硬盘原理</h5><ul>
 <li> 硬盘的构造如下图所示，磁盘的构造主要由盘面，磁道，磁头，柱面，扇区这几部分组成。</li>
 </ul>
-<p>​    <img src="http://121.36.60.111:18001/image/Pic/qdGHPA.png" alt="qdGHPA"></p>
+<p>​    <img src="https://file.coderstudy.cn/image/Pic/qdGHPA.png" alt="qdGHPA"></p>
 <ul>
 <li><p><code>盘面(platter)</code>：盘面是磁盘记录信息的载体，主要由铝合金材料组成。上面涂有磁性物质。上下两面都可以使用。</p>
 </li>
 <li><p><code>磁道(track)</code>：盘面上有许多个同心圆环，这个轨道就称之为磁道。每个盘面上一般有300-1024个磁道。从外到里可分为0-n磁道。信息的存储从0磁道开始，一直到离主轴最近的区域，这个区域叫做着陆区(loading Zone)，这个区域不存储信息。</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/Mvv0z0.png" alt="Mvv0z0"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/Mvv0z0.png" alt="Mvv0z0"></p>
 </li>
 <li><p><code>扇区(setors)</code>: 存储信息主要在这个区域，主要存储512byte数据和寻址信息，寻址信息主要包括，磁头号(盘面号)，磁道号(柱面号)，扇区在磁道上的位置(扇区号)，这个三维地址组成了信息在磁盘上的唯一标识地址。用于磁头读取或写入信息时比对。</p>
 </li>
@@ -480,7 +480,7 @@
 <li><p>硬盘的最小存储单元是扇区，每个扇区可以储存512byte数据，如果想要存储大数据，就需要硬盘磁头读写许多次，效率太低，所以有了block的概念，逻辑块是格式化文件系统中指定最小的存储单元。这个大小是扇区的2次方，在读取大数据时，磁头可以一次读取一块，这样磁头的读取次数大大降低。提高了IO的效率，当然块大小必须适中，块大小小了，就会导致读取效率低，如果块大了，在存储小文件时，就会浪费大量的存储空间。必须在文件的读取效率与空间利用率中做取舍。所以在格式化分区时，需要考虑使用情景。</p>
 </li>
 <li><p>VFS(Virual File System): 虚拟文件系统时Linux中一种抽象的文件系统，试想一下，当操作系统需要适配多个文件系统时，每个文件系统的接口肯定不是相同的。所以，VFS就把这些不同的文件系统做一个抽象，提供统一的API访问接口，这样，用户空间就不用关心不同文件系统中不一样的API了。VFS所提供的这些统一的API，再经过System Call包装一下，用户空间就可以经过SCI的系统调用来操作不同的文件系统。</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/v6IcQv.png" alt="v6IcQv"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/v6IcQv.png" alt="v6IcQv"></p>
 </li>
 </ul>
 <h4 id="5-LVM分区"><a href="#5-LVM分区" class="headerlink" title="5.LVM分区"></a>5.LVM分区</h4><h5 id="5-1lvm是什么"><a href="#5-1lvm是什么" class="headerlink" title="5.1lvm是什么"></a>5.1lvm是什么</h5><ul>

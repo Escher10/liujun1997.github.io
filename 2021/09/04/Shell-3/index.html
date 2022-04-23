@@ -25,53 +25,53 @@
 <meta property="og:site_name" content="Escher">
 <meta property="og:description" content="Shell计算命令：expr命令详解介绍expr (evaluate expressions 的缩写)，译为“表达式求值”。Shell expr 是一个功能强大，并且比较复杂的命令，它除了可以实现整数计算，还可以结合一些选项对字符串进行处理，例如计算字符串长度、字符串比较、字符串匹配、字符串提取等. 求值表达式(已讲)计算语法 123expr 算术运算符表达式# 例如: expr 1 + 1  返">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703102043699.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703104041895.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703112053690.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703113800668.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703114726267.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703135351633.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703153959498.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703151035148.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703151349964.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703154646821.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703155152427.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703155732347.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703161628360.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703165220020.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703172613295.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200703183031637.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704063911230.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704114310717.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704074537077.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704074322642.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704142506942.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704145024719.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704155626936.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704164037719.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704162438406.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704165553702.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200709171835755.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200709172353670.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704175505682.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704184207793.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200709173619130.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704211609666.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704213119988.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200704214505694.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705211524230.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705214312724.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705215617076.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705221517251.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705225942198.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705230840431.png">
-<meta property="og:image" content="http://121.36.60.111:18001/image/Pic/image-20200705231347332.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703102043699.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703104041895.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703112053690.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703113800668.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703114726267.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703135351633.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703153959498.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703151035148.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703151349964.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703154646821.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703155152427.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703155732347.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703161628360.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703165220020.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703172613295.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200703183031637.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704063911230.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704114310717.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704074537077.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704074322642.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704142506942.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704145024719.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704155626936.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704164037719.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704162438406.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704165553702.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200709171835755.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200709172353670.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704175505682.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704184207793.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200709173619130.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704211609666.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704213119988.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200704214505694.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705211524230.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705214312724.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705215617076.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705221517251.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705225942198.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705230840431.png">
+<meta property="og:image" content="https://file.coderstudy.cn/image/Pic/image-20200705231347332.png">
 <meta property="article:published_time" content="2021-09-04T11:39:55.000Z">
-<meta property="article:modified_time" content="2022-04-21T14:35:25.494Z">
+<meta property="article:modified_time" content="2022-04-23T12:25:27.941Z">
 <meta property="article:author" content="Escher">
 <meta property="article:tag" content="Linux Shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://121.36.60.111:18001/image/Pic/image-20200703102043699.png">
+<meta name="twitter:image" content="https://file.coderstudy.cn/image/Pic/image-20200703102043699.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://liujun1997.github.io/2021/09/04/Shell-3/index.html">
   
@@ -438,7 +438,7 @@
 <h2 id="求值表达式-已讲"><a href="#求值表达式-已讲" class="headerlink" title="求值表达式(已讲)"></a>求值表达式(已讲)</h2><p>计算语法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expr 算术运算符表达式</span><br><span class="line"><span class="meta">#</span><span class="bash"> 例如: expr 1 + 1  返回: 2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 例如: expr \( 10 + 10 \) \* 2 + 100 返回:140</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703102043699.png" alt="image-20200703102043699"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703102043699.png" alt="image-20200703102043699"></p>
 <p>获取计算结果赋值给新变量语法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result=`expr 算术运算符表达式`</span><br><span class="line"><span class="meta">#</span><span class="bash"> 例如: result=`expr 1 + 1`  输出result得到结果: 2</span></span><br></pre></td></tr></table></figure>
 
@@ -470,7 +470,7 @@
 
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703104041895.png" alt="image-20200703104041895"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703104041895.png" alt="image-20200703104041895"></p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>expr命令的作用</p>
 <blockquote>
 <ol>
@@ -535,7 +535,7 @@
 
 
 <p>运行结果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703112053690.png" alt="image-20200703112053690"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703112053690.png" alt="image-20200703112053690"></p>
 <h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>(())的用法</p>
 <blockquote>
 <p>括号内赋值:  ((变量名=整数表达式))</p>
@@ -555,7 +555,7 @@
 <li><p>多个表达式之间使用空格,  不是”,”号</p>
 </li>
 <li><p>对于类似<code>let a+b</code>这样的写法，Shell 虽然计算了 a+b 的值，但却将结果丢弃, 如果 <code>echo let a+b</code> 会直接输出字符串 <code>a+b</code> ；若不想这样，可以使用<code>let sum=a+b</code>将 a+b 的结果保存在变量 sum 中。</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703113800668.png" alt="image-20200703113800668"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703113800668.png" alt="image-20200703113800668"></p>
 <p>输出建议使用(())</p>
 </li>
 </ol>
@@ -571,7 +571,7 @@
 
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703114726267.png" alt="image-20200703114726267"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703114726267.png" alt="image-20200703114726267"></p>
 <h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p>let数字计算用法</p>
 <p>作用: 用于赋值,是最简洁的整数运算赋值命令</p>
 <blockquote>
@@ -596,7 +596,7 @@
 
 
 <p>运行结果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703135351633.png" alt="image-20200703135351633"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703135351633.png" alt="image-20200703135351633"></p>
 <h2 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h2><p>执行整数表达式命令的总结, 推荐使用哪个</p>
 <blockquote>
 <p>expr</p>
@@ -663,7 +663,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">108*67+12345</span><br><span class="line">58+2007*11</span><br></pre></td></tr></table></figure>
 
 <p>执行命令</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703153959498.png" alt="image-20200703153959498"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703153959498.png" alt="image-20200703153959498"></p>
 <blockquote>
 <p>可以使用 <code>quit</code> 命令退出bc</p>
 </blockquote>
@@ -730,9 +730,9 @@
 <li>shell中非互动式的输入重定向运算</li>
 </ol>
 <h2 id="示例：bc中互动式的数学运算"><a href="#示例：bc中互动式的数学运算" class="headerlink" title="示例：bc中互动式的数学运算"></a>示例：bc中互动式的数学运算</h2><h3 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h3><p>使用 <code>bc -q</code> 命令，回车即可,  直接进行计算器进行运算</p>
-<h3 id="演示-1"><a href="#演示-1" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200703151035148.png" alt="image-20200703151035148"></p>
+<h3 id="演示-1"><a href="#演示-1" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200703151035148.png" alt="image-20200703151035148"></p>
 <p>退出bc使用 <code>quit</code></p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703151349964.png" alt="image-20200703151349964"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703151349964.png" alt="image-20200703151349964"></p>
 <h2 id="示例：shell中非互动式的管道运算"><a href="#示例：shell中非互动式的管道运算" class="headerlink" title="示例：shell中非互动式的管道运算"></a>示例：shell中非互动式的管道运算</h2><h3 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h3><p>在 Shell 脚本中，我们可以借助管道使用 bc 计算器。</p>
 <h3 id="借助管道使用-bc-计算器语法"><a href="#借助管道使用-bc-计算器语法" class="headerlink" title="借助管道使用 bc 计算器语法"></a>借助管道使用 bc 计算器语法</h3><p>直接进行bc的表达式计算输出</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;expression&quot; | bc [options]</span><br></pre></td></tr></table></figure>
@@ -751,14 +751,14 @@
 <p>​     `` 是所有linux系统支持的方式,  兼容性较好, 但是容易与引号产生混淆</p>
 <p>​      $() 不是所有linux系统都支持的方式,  兼容性较差, 但是不容易产生混淆</p>
 </blockquote>
-<h3 id="演示-2"><a href="#演示-2" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200703154646821.png" alt="image-20200703154646821"></p>
+<h3 id="演示-2"><a href="#演示-2" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200703154646821.png" alt="image-20200703154646821"></p>
 <p>引用shell变量进行计算</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703155152427.png" alt="image-20200703155152427"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703155152427.png" alt="image-20200703155152427"></p>
 <blockquote>
 <p>注意 b是bc中定义的新变量, 与shell变量没有任何关系,  所以不可以在shell中获取b变量</p>
 </blockquote>
 <p>进制转换</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703155732347.png" alt="image-20200703155732347"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703155732347.png" alt="image-20200703155732347"></p>
 <h2 id="示例：shell中非互动式的输入重定向运算"><a href="#示例：shell中非互动式的输入重定向运算" class="headerlink" title="示例：shell中非互动式的输入重定向运算"></a>示例：shell中非互动式的输入重定向运算</h2><h3 id="介绍-7"><a href="#介绍-7" class="headerlink" title="介绍"></a>介绍</h3><p>将计算表达式输出给bc去执行, 特点类似于文件中输入,可以输入多行表达式, 更加清晰</p>
 <h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 第一种方式</span></span><br><span class="line">var_name=`bc [options] &lt;&lt; EOF</span><br><span class="line">第一行表达式1</span><br><span class="line">第二行表达式2</span><br><span class="line">...</span><br><span class="line">EOF</span><br><span class="line">`</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 第二种方式</span></span><br><span class="line">var_name=$(bc [options] &lt;&lt; EOF</span><br><span class="line">第一行表达式1</span><br><span class="line">第二行表达式2</span><br><span class="line">...</span><br><span class="line">EOF</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
@@ -768,7 +768,7 @@
 <p><code>EOF..EOF</code>  输入流的多行表达式</p>
 <p>含义:  将EOF中间多行表达式输入给到bc去执行, j将bc执行的结果给到Shell变量var_name</p>
 </blockquote>
-<h3 id="演示-3"><a href="#演示-3" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200703161628360.png" alt="image-20200703161628360"></p>
+<h3 id="演示-3"><a href="#演示-3" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200703161628360.png" alt="image-20200703161628360"></p>
 <blockquote>
 <p>如果有大量的数学计算，那么使用输入重定向就比较方便，因为数学表达式可以换行，写起来更加清晰。</p>
 </blockquote>
@@ -819,7 +819,7 @@
 <p><code>(())</code>是一种数学计算命令，它除了可以进行最基本的加减乘除运算，还可以进行大于、小于、等于等关系运算，以及与、或、非逻辑运算。当 a 和 b 相等时，<code>(( $a == $b ))</code>判断条件成立，进入 if，执行 then 后边的 echo 语句</p>
 </blockquote>
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703165220020.png" alt="image-20200703165220020"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703165220020.png" alt="image-20200703165220020"></p>
 <h2 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h2><p>使用if条件语句进行条件判断</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if 条件1 </span><br><span class="line">then</span><br><span class="line">	命令1</span><br><span class="line">elif 条件2 </span><br><span class="line">then</span><br><span class="line">	命令2</span><br><span class="line">elif 条件3 </span><br><span class="line">then</span><br><span class="line">	命令3</span><br><span class="line">...</span><br><span class="line">else </span><br><span class="line">	命令n</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
@@ -834,7 +834,7 @@
 <h2 id="介绍-9"><a href="#介绍-9" class="headerlink" title="介绍"></a>介绍</h2><p>linux任何命令的的执行都会有一个退出状态,  无论是内置命令还是外部文件命令. 还是自定义的 Shell 函数，当它退出（运行结束）时，都会返回一个比较小的整数值给调用（使用）它的程序，这就是命令的<strong>退出状态</strong></p>
 <p>大多数命令状态0代表成功, 非0代表失败. 也有特殊的命令,比如 diff 命令用来比较两个文件的不同，对于“没有差别”的文件返回 0，对于“找到差别”的文件返回 1，对无效文件名返回 2</p>
 <p> Shell 中，有多种方式取得命令的退出状态，其中 <code>$?</code> 是最常见的一种.</p>
-<h2 id="演示-5"><a href="#演示-5" class="headerlink" title="演示"></a>演示</h2><p><img src="http://121.36.60.111:18001/image/Pic/image-20200703172613295.png" alt="image-20200703172613295"></p>
+<h2 id="演示-5"><a href="#演示-5" class="headerlink" title="演示"></a>演示</h2><p><img src="https://file.coderstudy.cn/image/Pic/image-20200703172613295.png" alt="image-20200703172613295"></p>
 <h2 id="退出状态和逻辑运算符的组合"><a href="#退出状态和逻辑运算符的组合" class="headerlink" title="退出状态和逻辑运算符的组合"></a>退出状态和逻辑运算符的组合</h2><p>Shell if 语句使用逻辑运算符将多个退出状态组合起来，这样就可以一次判断多个条件了。</p>
 <table>
 <thead>
@@ -874,7 +874,7 @@
 <p><code>$data &gt; $filename</code>   其中 <code>&gt;</code>  用于将内容输出到指定文件中去</p>
 </blockquote>
 <p>运行结果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200703183031637.png" alt="image-20200703183031637"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200703183031637.png" alt="image-20200703183031637"></p>
 <h2 id="小结-6"><a href="#小结-6" class="headerlink" title="小结"></a>小结</h2><ol>
 <li><p>什么是退出状态</p>
 <blockquote>
@@ -934,7 +934,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">num1=1 num2=1 num3=2</span><br><span class="line">echo &quot;num1=$&#123;num1&#125;,num2=$&#123;num2&#125;,num3=$&#123;num3&#125;&quot;</span><br><span class="line"></span><br><span class="line">if test $num1 -eq $num2</span><br><span class="line">then</span><br><span class="line">    echo &#x27;num1和num2两个数相等！&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;num1和num2两个数不相等！&#x27;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if test $num2 -eq $num3</span><br><span class="line">then</span><br><span class="line">    echo &#x27;num2和num3两个数相等！&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;num2和num3两个数不相等！&#x27;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704063911230.png" alt="image-20200704063911230"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704063911230.png" alt="image-20200704063911230"></p>
 <h2 id="字符串比较测试"><a href="#字符串比较测试" class="headerlink" title="字符串比较测试"></a>字符串比较测试</h2><h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><table>
 <thead>
 <tr>
@@ -971,7 +971,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">str1=&quot;itheima&quot; str2=&quot;itcast&quot; str3=&quot;&quot;</span><br><span class="line">echo &quot;str1=$&#123;str1&#125;,str2=$&#123;str2&#125;,str3=$&#123;str3&#125;&quot;</span><br><span class="line"></span><br><span class="line">if test $str1 = $str2</span><br><span class="line">then</span><br><span class="line">    echo &#x27;str1和str2两个字符串相等&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;str1和str2两个字符串不相等&#x27;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if test $str1 \&gt; $str2</span><br><span class="line">then</span><br><span class="line">    echo &#x27;str1大于str2&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;str1小于str2&#x27;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if test -z $str2</span><br><span class="line">then</span><br><span class="line">	echo &quot;str2字符串长度为0&quot;</span><br><span class="line">else</span><br><span class="line">	echo &quot;str2字符串长度不为0&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if test -z $str3</span><br><span class="line">then</span><br><span class="line">	echo &quot;str3字符串长度为0&quot;</span><br><span class="line">else</span><br><span class="line">	echo &quot;str3字符串长度不为0&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704114310717.png" alt="image-20200704114310717"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704114310717.png" alt="image-20200704114310717"></p>
 <h2 id="文件测试"><a href="#文件测试" class="headerlink" title="文件测试"></a>文件测试</h2><h3 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h3><table>
 <thead>
 <tr>
@@ -1017,7 +1017,7 @@
 </tr>
 </tbody></table>
 <h3 id="演示-9"><a href="#演示-9" class="headerlink" title="演示"></a>演示</h3><p>查询control1.sh与control2.sh文件</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704074537077.png" alt="image-20200704074537077"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704074537077.png" alt="image-20200704074537077"></p>
 <p>control5.sh脚本代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">if test -w ./control1.sh</span><br><span class="line">then</span><br><span class="line">    echo &#x27;文件已存在并且可写!&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;文件不存在或不可写!&#x27;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if test -e ./control1.sh -a -e ./control2.sh</span><br><span class="line">then</span><br><span class="line">    echo &#x27;两个文件都存在!&#x27;</span><br><span class="line">else</span><br><span class="line">    echo &#x27;可能有一个或两个文件不存在&#x27;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
@@ -1026,7 +1026,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test 条件1 -o 条件2 -a 条件3 ...</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704074322642.png" alt="image-20200704074322642"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704074322642.png" alt="image-20200704074322642"></p>
 <h2 id="小结-7"><a href="#小结-7" class="headerlink" title="小结"></a>小结</h2><ol>
 <li><p>test命令对整数比较测试</p>
 <blockquote>
@@ -1088,7 +1088,7 @@
 
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704142506942.png" alt="image-20200704142506942"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704142506942.png" alt="image-20200704142506942"></p>
 <h2 id="小结-8"><a href="#小结-8" class="headerlink" title="小结"></a>小结</h2><p>使用case多分支条件判断语法</p>
 <blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">case 表达式 in</span><br><span class="line">模式1)</span><br><span class="line">	命令</span><br><span class="line">	...</span><br><span class="line">	;;</span><br><span class="line">模式2)</span><br><span class="line">	命令</span><br><span class="line">	...</span><br><span class="line">	;;</span><br><span class="line">...</span><br><span class="line">*)</span><br><span class="line">	命令</span><br><span class="line">	...</span><br><span class="line">	;;</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
@@ -1107,7 +1107,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p &quot;请输入一个数字:&quot; number</span><br><span class="line">i=0</span><br><span class="line">while [[ $i &lt; $number ]]</span><br><span class="line">do</span><br><span class="line">  echo &quot;hello world&quot;</span><br><span class="line">  ((i++))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704145024719.png" alt="image-20200704145024719"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704145024719.png" alt="image-20200704145024719"></p>
 <h2 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while :</span><br><span class="line">do</span><br><span class="line">    command</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>或</p>
@@ -1131,7 +1131,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p &quot;请输入一个数字:&quot; number</span><br><span class="line">i=0</span><br><span class="line">until [[ ! $i &lt; $number ]]</span><br><span class="line">do</span><br><span class="line">  echo &quot;hello world&quot;</span><br><span class="line">  ((i++))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704155626936.png" alt="image-20200704155626936"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704155626936.png" alt="image-20200704155626936"></p>
 <h2 id="小结-10"><a href="#小结-10" class="headerlink" title="小结"></a>小结</h2><p>until循环结构的使用语法</p>
 <blockquote>
 <p>until 条件</p>
@@ -1158,7 +1158,7 @@
 
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704164037719.png" alt="image-20200704164037719"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704164037719.png" alt="image-20200704164037719"></p>
 <h2 id="循环方式2"><a href="#循环方式2" class="headerlink" title="循环方式2"></a>循环方式2</h2><h3 id="语法-12"><a href="#语法-12" class="headerlink" title="语法"></a>语法</h3><p>多行写法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for var in &#123;start..end&#125;</span><br><span class="line">do</span><br><span class="line">	命令</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
@@ -1175,14 +1175,14 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;1..5&#125;; do echo $i; done</span><br></pre></td></tr></table></figure>
 
 <p>效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704162438406.png" alt="image-20200704162438406"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704162438406.png" alt="image-20200704162438406"></p>
 <h2 id="循环方式3"><a href="#循环方式3" class="headerlink" title="循环方式3"></a>循环方式3</h2><h3 id="语法-13"><a href="#语法-13" class="headerlink" title="语法"></a>语法</h3><p>多行写法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for((i=start;i&lt;=end;i++))</span><br><span class="line">do</span><br><span class="line">	命令</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>一行写法</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for((i=start;i&lt;=end;i++)); do 命令; done</span><br></pre></td></tr></table></figure>
 
-<h3 id="演示-15"><a href="#演示-15" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200704165553702.png" alt="image-20200704165553702"></p>
+<h3 id="演示-15"><a href="#演示-15" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200704165553702.png" alt="image-20200704165553702"></p>
 <h2 id="无限循环-1"><a href="#无限循环-1" class="headerlink" title="无限循环"></a>无限循环</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for((;;)); do 命令; done</span><br></pre></td></tr></table></figure>
 
 
@@ -1205,12 +1205,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo &quot;你的爱好是什么?&quot;</span><br><span class="line">select hobby in &quot;编程&quot; &quot;游戏&quot; &quot;篮球&quot; &quot;游泳&quot;</span><br><span class="line">do</span><br><span class="line">	echo $hobby</span><br><span class="line">    break</span><br><span class="line">done</span><br><span class="line">echo &quot;你的爱好是:$&#123;hobby&#125;&quot;</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200709171835755.png" alt="image-20200709171835755"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200709171835755.png" alt="image-20200709171835755"></p>
 <h2 id="演示2"><a href="#演示2" class="headerlink" title="演示2"></a>演示2</h2><p>脚本文件代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo &quot;你的爱好是什么&quot;</span><br><span class="line">select hobby in &quot;编程&quot; &quot;游戏&quot; &quot;篮球&quot; &quot;游泳&quot;</span><br><span class="line">do</span><br><span class="line">    case $hobby in</span><br><span class="line">        &quot;编程&quot;)</span><br><span class="line">            echo &quot;编程,多敲代码&quot;</span><br><span class="line">            break</span><br><span class="line">            ;;</span><br><span class="line">        &quot;游戏&quot;)</span><br><span class="line">            echo &quot;少玩游戏&quot;</span><br><span class="line">            break</span><br><span class="line">            ;;</span><br><span class="line">        &quot;篮球&quot;|&quot;游泳&quot;)</span><br><span class="line">            echo &quot;运动有利健康&quot;</span><br><span class="line">            break</span><br><span class="line">            ;;</span><br><span class="line">        *)</span><br><span class="line">            echo &quot;输入错误，请重新输入&quot;</span><br><span class="line">    esac</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200709172353670.png" alt="image-20200709172353670"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200709172353670.png" alt="image-20200709172353670"></p>
 <h2 id="小结-12"><a href="#小结-12" class="headerlink" title="小结"></a>小结</h2><p>select的作用</p>
 <blockquote>
 <p>用于交互式循环输入选择菜单</p>
@@ -1233,13 +1233,13 @@
 <p>根据根据指定字符串或路径名进行截取文件名,  比如:  根据路径”/one/two/aa.txt”,  可以截取出aa.txt</p>
 <p>suffix: 用于截取的时候去掉指定的后缀名.</p>
 </blockquote>
-<h3 id="演示-16"><a href="#演示-16" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200704175505682.png" alt="image-20200704175505682"></p>
+<h3 id="演示-16"><a href="#演示-16" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200704175505682.png" alt="image-20200704175505682"></p>
 <h2 id="dirname系统函数"><a href="#dirname系统函数" class="headerlink" title="dirname系统函数"></a>dirname系统函数</h2><h3 id="介绍-17"><a href="#介绍-17" class="headerlink" title="介绍"></a>介绍</h3><p>从指定的文件绝对路径,  去除文件名，返回剩下的前缀目录路径</p>
 <h3 id="语法-16"><a href="#语法-16" class="headerlink" title="语法"></a>语法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirname 文件绝对路径</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="演示-17"><a href="#演示-17" class="headerlink" title="演示"></a>演示</h3><p><img src="http://121.36.60.111:18001/image/Pic/image-20200704184207793.png" alt="image-20200704184207793"></p>
+<h3 id="演示-17"><a href="#演示-17" class="headerlink" title="演示"></a>演示</h3><p><img src="https://file.coderstudy.cn/image/Pic/image-20200704184207793.png" alt="image-20200704184207793"></p>
 <h2 id="小结-13"><a href="#小结-13" class="headerlink" title="小结"></a>小结</h2><ol>
 <li><p>函数的分类</p>
 <blockquote>
@@ -1276,12 +1276,12 @@
 
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200709173619130.png" alt="image-20200709173619130"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200709173619130.png" alt="image-20200709173619130"></p>
 <h2 id="示例：无参有返回值函数"><a href="#示例：无参有返回值函数" class="headerlink" title="示例：无参有返回值函数"></a>示例：无参有返回值函数</h2><p>fun2.sh文件脚本代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">sum()</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;求两个数的和...&quot;</span><br><span class="line">    read -p &quot;输入第一个数字: &quot; n1</span><br><span class="line">    read -p &quot;输入第二个数字: &quot; n2</span><br><span class="line">    echo &quot;两个数字分别为 $n1 和 $n2 &quot;</span><br><span class="line">    return $(($n1+$n2))</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 调用函数</span></span><br><span class="line">sum</span><br><span class="line">echo &quot;两个数字的和为: $? &quot;  # 获取函数返回值</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704211609666.png" alt="image-20200704211609666"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704211609666.png" alt="image-20200704211609666"></p>
 <h2 id="示例：有参函数"><a href="#示例：有参函数" class="headerlink" title="示例：有参函数"></a>示例：有参函数</h2><h3 id="介绍-19"><a href="#介绍-19" class="headerlink" title="介绍"></a>介绍</h3><p>在Shell中，调用函数时可以向其传递参数。在函数体内部，通过 <code>$n</code> 的形式来获取参数的值，例如，<code>$1</code> 表示第一个参数，<code>$2</code> 表示第二个参数…</p>
 <p>其他参数介绍</p>
 <table>
@@ -1320,13 +1320,13 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">funParam()&#123;</span><br><span class="line">    echo &quot;第一个参数为 $1 !&quot;</span><br><span class="line">    echo &quot;第二个参数为 $2 !&quot;</span><br><span class="line">    echo &quot;第十个参数为 $10 !&quot;</span><br><span class="line">    echo &quot;第十个参数为 $&#123;10&#125; !&quot;</span><br><span class="line">    echo &quot;第十一个参数为 $&#123;11&#125; !&quot;</span><br><span class="line">    echo &quot;参数总数有 $# 个!&quot;</span><br><span class="line">    echo &quot;作为一个字符串输出所有参数 $* !&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 调用函数</span></span><br><span class="line">funParam 1 2 3 4 5 6 7 8 9 10 22</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704213119988.png" alt="image-20200704213119988"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704213119988.png" alt="image-20200704213119988"></p>
 <h2 id="Shell程序与函数的区别"><a href="#Shell程序与函数的区别" class="headerlink" title="Shell程序与函数的区别"></a>Shell程序与函数的区别</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>函数和shell程序比较相似，区别在于：<br>    Shell 程序(内置命令和外部脚本文件),  外部脚本文件是在子Shell中运行,  会开启独立的进程运行<br>    Shell函数在当前Shell的进程中运行</p>
 <h3 id="演示-19"><a href="#演示-19" class="headerlink" title="演示"></a>演示</h3><p>fun4.sh脚本文件代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">demo()&#123;</span><br><span class="line">        echo &quot;函数中打印当前进程ID:$$&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo &quot;当前脚本文件(Shell程序)打印当前进程ID:$$&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 调用函数</span></span><br><span class="line">demo</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200704214505694.png" alt="image-20200704214505694"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200704214505694.png" alt="image-20200704214505694"></p>
 <h2 id="小结-14"><a href="#小结-14" class="headerlink" title="小结"></a>小结</h2><ol>
 <li><p>使用Shell的自定义函数实现代码重用</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数名()&#123;</span><br><span class="line">	命令</span><br><span class="line"><span class="meta">	#</span><span class="bash"> 使用<span class="variable">$n</span>获取函数的参数</span></span><br><span class="line">	[return 返回值]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -1451,11 +1451,11 @@
 <p>执行who命令重定向输出到redirect1.txt文件中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;itheima&quot; &gt;&gt; redirect1.txt</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705211524230.png" alt="image-20200705211524230"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705211524230.png" alt="image-20200705211524230"></p>
 <h2 id="输出示例：错误信息重定向输出"><a href="#输出示例：错误信息重定向输出" class="headerlink" title="输出示例：错误信息重定向输出"></a>输出示例：错误信息重定向输出</h2><p>预览错误消息</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls java</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705214312724.png" alt="image-20200705214312724"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705214312724.png" alt="image-20200705214312724"></p>
 <p>没有java目录所以报错</p>
 <p>将错误消息输出到error.log文件中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls java 2&gt; redirect2.txt</span><br></pre></td></tr></table></figure>
@@ -1466,7 +1466,7 @@
 <p><code>2&gt;</code> 注意fd与&gt;符号之间不能有空格 </p>
 </blockquote>
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705215617076.png" alt="image-20200705215617076"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705215617076.png" alt="image-20200705215617076"></p>
 <h2 id="输出示例：正确和错误信息同时输出"><a href="#输出示例：正确和错误信息同时输出" class="headerlink" title="输出示例：正确和错误信息同时输出"></a>输出示例：正确和错误信息同时输出</h2><p>将正确信息与错误信息都保存到一个文件中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;itcast&quot; &gt; redirect2.txt 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
 
@@ -1477,7 +1477,7 @@
 <p>​        合并第二种写法:  <code>2&gt;&amp;1</code></p>
 </blockquote>
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705221517251.png" alt="image-20200705221517251"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705221517251.png" alt="image-20200705221517251"></p>
 <h2 id="输入示例：统计文件数据行数"><a href="#输入示例：统计文件数据行数" class="headerlink" title="输入示例：统计文件数据行数"></a>输入示例：统计文件数据行数</h2><h3 id="wc命令介绍"><a href="#wc命令介绍" class="headerlink" title="wc命令介绍"></a>wc命令介绍</h3><p>Linux wc 命令可以用来对文本进行统计，包括单词个数、行数、字节数</p>
 <h3 id="wc命令语法"><a href="#wc命令语法" class="headerlink" title="wc命令语法"></a>wc命令语法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc  [options]  [文件名]</span><br></pre></td></tr></table></figure>
 
@@ -1506,13 +1506,13 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc -l &lt; redirect2.txt</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705225942198.png" alt="image-20200705225942198"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705225942198.png" alt="image-20200705225942198"></p>
 <h2 id="输入示例：逐行读取文件数据"><a href="#输入示例：逐行读取文件数据" class="headerlink" title="输入示例：逐行读取文件数据"></a>输入示例：逐行读取文件数据</h2><p>循环读取文件每一行数据</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while read str; do echo $str; done &lt; redirect2.txt</span><br></pre></td></tr></table></figure>
 
 <p>运行效果</p>
-<p><img src="http://121.36.60.111:18001/image/Pic/image-20200705230840431.png" alt="image-20200705230840431"></p>
-<h2 id="输入示例：读取终端输入数据的行数"><a href="#输入示例：读取终端输入数据的行数" class="headerlink" title="输入示例：读取终端输入数据的行数"></a>输入示例：读取终端输入数据的行数</h2><p><img src="http://121.36.60.111:18001/image/Pic/image-20200705231347332.png" alt="image-20200705231347332"></p>
+<p><img src="https://file.coderstudy.cn/image/Pic/image-20200705230840431.png" alt="image-20200705230840431"></p>
+<h2 id="输入示例：读取终端输入数据的行数"><a href="#输入示例：读取终端输入数据的行数" class="headerlink" title="输入示例：读取终端输入数据的行数"></a>输入示例：读取终端输入数据的行数</h2><p><img src="https://file.coderstudy.cn/image/Pic/image-20200705231347332.png" alt="image-20200705231347332"></p>
 <h2 id="小结-15"><a href="#小结-15" class="headerlink" title="小结"></a>小结</h2><ol>
 <li><p>Shell重定向的含义</p>
 <blockquote>
